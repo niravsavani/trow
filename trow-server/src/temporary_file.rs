@@ -25,7 +25,7 @@ impl TemporaryFile {
                 std::io::ErrorKind::AlreadyExists => {
                     return Ok(None);
                 }
-                _ => return Err(e.into()),
+                _ => return Err(e),
             },
         };
         Ok(Some(TemporaryFile { file, path }))
